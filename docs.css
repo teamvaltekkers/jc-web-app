@@ -3276,10 +3276,13 @@
   background-color: rgb(46, 179, 46);
 }
 .due {
-  background-color: rgb(180, 122, 13);
+  background-color: rgb(93, 160, 6);
 }
-.late, .missed {
-  background-color: rgb(231, 55, 55);
+.late {
+  background-color: rgb(179, 122, 16);
+}
+.missed {
+  background-color: rgb(230, 39, 32);
 }
 .completed {
   background-color: #005ea5;
