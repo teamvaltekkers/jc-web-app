@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
   var waitingUl = document.getElementById('waiting');
   var checkInRef = database.ref('checkins/');
 
-
   checkInRef.on('value', (snapshot) =>{
     var checkins = snapshot.val();
     var newList = '';
