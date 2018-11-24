@@ -2,6 +2,7 @@
 <!-- saved from url=(0060)https://www.universal-credit.service.gov.uk/postcode-checker -->
 <html lang="en-GB">
 <!--<![endif]-->
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,17 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="abe36055.styles.css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-    var socket = io();
-    $(() => {
-        $("#id-submit-button").click(()=>{
-          $.post('/arrival', {
-            name: "Jane"
-          })
-        })
-    })
-  </script>
+  <script src="./dist/checkin.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta content="True" name="HandheldFriendly">
   <meta content="320" name="MobileOptimized">
@@ -45,6 +36,7 @@
     /* end of head tag */
 </script>
 </head>
+
 <body class="claimant  js-enabled">
   <script>document.body.className = ((document.body.className) ? document.body.className + " js-enabled" : "js-enabled");</script>
   <noscript>
@@ -125,7 +117,7 @@
           <fieldset>
             <div class="buttonSpacing">
               <div class="form-group">
-                <input formnovalidate="" id="id-submit-button" class="button" type="submit" name="next" value="Sign in">
+                <input  id="id-submit-button" type="submit" class="button"  name="next" value="Sign in">
               </div>
             </div>
           </fieldset>
@@ -134,7 +126,8 @@
           <section id="expandableHelp" aria-labelledby="expand-help__heading-expandableHelp" class="expand-help   "
             data-initial-value="">
             <h2 class="expand-help__heading" id="expand-help__heading-expandableHelp"><button type="button" name="expand-help-button"
-                class="expand-help__button" aria-expanded="false" aria-controls="help-content-expandableHelp">Problems checking in?</button></h2>
+                class="expand-help__button" aria-expanded="false" aria-controls="help-content-expandableHelp">Problems
+                checking in?</button></h2>
             <div class="expand-help__content js-hidden" id="help-content-expandableHelp" aria-hidden="true">
               <div class="important-information">
                 <p>If you can't find your postcode on a letter or other document, try entering your address into a
@@ -182,4 +175,5 @@
   </footer>
   <div id="global-app-error" class="app-error hidden"></div>
 </body>
+
 </html>

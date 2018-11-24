@@ -25,18 +25,8 @@
     <link href="docs.css" media="all" rel="stylesheet" type="text/css">
     <!--<![endif]-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script>
-        var socket = io();
-        $(() => {
-            socket.on('arrival', val => {
-                // alert(val.name + " is here for you now.");
-                $(`#${val.name}`).remove();
-                $('#waiting').append(li(val.name, 'waiting'));
-            });
-        });
-        const li = (name, cat) => `<li class="app-task-list__item" id="${name}"><a class="app-task-list__task-name" href="">${name} - ${(new Date()).toString().split(' ')[4].substr(0, 5)}</a><strong class="${cat} govuk-tag app-task-list__task-completed" id="contact-details-completed">${cat}</strong></li>`;
-    </script>
+    <script src="/dist/admin.js"></script>
+
     <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
 </head>
 
