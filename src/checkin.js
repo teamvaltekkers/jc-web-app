@@ -15,7 +15,7 @@ firebase.initializeApp(config);
 const database = firebase.database();
 
 const checkinUser = (id, name, time, status, status_spec) =>
-  database.ref('checkins/' + id + ' checkin').set({
+  database.ref('checkins/' + id).set({
     id: id,
     time: time,
     name: name,
