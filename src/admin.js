@@ -28,5 +28,38 @@ document.addEventListener("DOMContentLoaded", function() {
     waitingUl.innerHTML = newList;
   });
 
-
+  registerResetFireBase();
 });
+
+const registerResetFireBase = () => {
+  var resetButton = document.getElementById('resetList');
+  resetButton.addEventListener('click', () =>{
+    database.ref('checkins/Joe checkin').set({
+      time: new Date().getTime(),
+      name: 'Joe',
+      status: 'pending',
+      status_spec:'late'
+    });
+    database.ref('checkins/Jack checkin').set({
+      time: new Date().getTime(),
+      name: 'Jack',
+      status: 'pending',
+      status_spec:'late'
+    });
+
+    database.ref('checkins/Paul checkin').set({
+      time: new Date().getTime(),
+      name: 'Paul',
+      status: 'pending',
+      status_spec:'late'
+    });
+
+    database.ref('checkins/Phil checkin').set({
+      time: new Date().getTime(),
+      name: 'Phil',
+      status: 'pending',
+      status_spec:'late'
+    });
+  })
+
+}
