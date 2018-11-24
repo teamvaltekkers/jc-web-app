@@ -25,6 +25,9 @@ const checkinUser = (id, name, time, status, status_spec) =>
 
 document.addEventListener("DOMContentLoaded", function() {
   var button = document.getElementById('id-submit-button');
-  button.addEventListener('click', () => checkinUser(new Date().valueOf(), 'Jane', new Date().getTime(), 'waiting', 'waiting'));
+  button.addEventListener('click', () => {
+    // remove 785376436542 from the db, or update with exact below values
+    checkinUser('785376436542', 'Jane', new Date().getTime(), 'waiting', 'waiting')
+  });
 });
 

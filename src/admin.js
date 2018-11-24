@@ -31,31 +31,33 @@ document.addEventListener("DOMContentLoaded", function() {
 const registerResetFireBase = () => {
   var resetButton = document.getElementById('resetList');
   resetButton.addEventListener('click', () =>{
-    database.ref('checkins/Joe checkin').set({
-      time: new Date().getTime(),
-      name: 'Joe',
-      status: 'pending',
-      status_spec:'late'
+    
+    database.ref('checkins/785376436542').set({
+      time: new Date().getTime() + (9 * 60 * 1000),
+      name: 'Jane',
+      status: 'due',
+      status_spec: 'due'
     });
-    database.ref('checkins/Jack checkin').set({
-      time: new Date().getTime(),
+
+    database.ref('checkins/8652524654254').set({
+      time: new Date().getTime() - (1 * 60 * 1000),
       name: 'Jack',
-      status: 'pending',
+      status: 'due',
       status_spec:'late'
     });
 
-    database.ref('checkins/Paul checkin').set({
-      time: new Date().getTime(),
+    database.ref('checkins/54264325432').set({
+      time: new Date().getTime() - (5 * 63 * 69 * 1000),
       name: 'Paul',
-      status: 'pending',
-      status_spec:'late'
+      status: 'complete',
+      status_spec:'complete'
     });
 
-    database.ref('checkins/Phil checkin').set({
-      time: new Date().getTime(),
+    database.ref('checkins/547869864563').set({
+      time: new Date().getTime() - (3 * 60 * 60 * 1000),
       name: 'Phil',
-      status: 'pending',
-      status_spec:'late'
+      status: 'complete',
+      status_spec:'missed'
     });
   })
 
