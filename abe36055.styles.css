@@ -357,7 +357,7 @@ a:focus {
     margin-bottom: -3px;
     padding-top: 2px;
     border-bottom: 1px solid transparent;
-    background: url(/images/external/govuk/1b300970.govuk_logo_crown.png) no-repeat;
+    background: url('./49e92449.govuk_logo_crown_print.png') no-repeat;
     background-size: 35px 31px;
     background-position: 0 0
 }
@@ -808,7 +808,7 @@ a:focus {
 
 #footer .footer-meta .copyright a {
     display: block;
-    background-image: url(/images/external/govuk/bf71a037.govuk-crest.png);
+    background-image: url('./assets/images/govuk-crest.png');
     background-repeat: no-repeat;
     background-position: 50% 0;
     text-align: center;
@@ -9682,8 +9682,8 @@ textarea:focus {
     line-height: 1em;
     text-decoration: none;
     text-rendering: optimizeLegibility;
-    background-image: url(/images/external/govuk/9e3f0531.govuk_logo_crown-1x.png);
-    background: url(/images/external/govuk/1b300970.govuk_logo_crown.png) no-repeat;
+    background-image: url('./49e92449.govuk_logo_crown_print.png');
+    background: url('./49e92449.govuk_logo_crown_print.png') no-repeat;
     background-size: 35px 31px;
     background-position: 0 0;
     border-bottom: 1px solid transparent;
