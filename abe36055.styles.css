@@ -12588,3 +12588,14 @@ textarea:focus {
 .form-date .input-append.date i:before {
     color: #000
 }
+
+input {
+    width: 100%;
+}
+
+/* input::after {
+    content: '>';
+    display: inline-block;
+    position: sticky;
+    right: 50px;
+} */

@@ -9,7 +9,7 @@
 
   <meta name="msapplication-config" content="none">
 
-  <title>Job Centre - Check-in</title>
+  <title>Job Centre - Dashboard</title>
 
   <link rel="stylesheet" href="810e1ba5.print.css" media="print">
 
@@ -31,18 +31,6 @@
 
 
   <link rel="stylesheet" href="abe36055.styles.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-    var socket = io();
-    $(() => {
-        $("#id-submit-button").click(()=>{
-          $.post('/arrival', {
-            name: "Jane"
-          })
-        })
-    })
-  </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta content="True" name="HandheldFriendly">
@@ -120,7 +108,7 @@
 
       <div class="header-proposition">
         <nav id="proposition-menu" class="content" aria-label="Main navigation">
-          <a href="" id="proposition-name">Job centre</a>
+          <a href="" id="proposition-name">Your dashboard</a>
         </nav>
       </div>
 
@@ -163,28 +151,28 @@
           <span id="id-subtitle" class="category heading-secondary">
           </span>
           <span class="js-page-title">
-            Check in to your Job Centre Plus station
+            Welcome to Rusholme Job Centre Plus
           </span>
           <span class="category heading-secondary">
-            Hello Jane!
+            John will see you in 9 minutes
           </span>
         </h1>
 
 
 
-        <p class="text">Check in to your appointment to get information on:</p>
-        <ul class="list-bullet">
+        <p class="text">Text</p>
+        <!-- <ul class="list-bullet">
           <li> Item 1</li>
           <li> Item 2</li>
           <li> Item 3</li>
-        </ul>
+        </ul> -->
 
-        <form method="get" novalidate="" autocomplete="off" action="dashboard.html">
+        <form method="post" novalidate="" autocomplete="off" action="https://www.universal-credit.service.gov.uk/postcode-checker">
 
           <input type="hidden" name="csrfToken" value="">
 
 
-          <fieldset>
+          <!-- <fieldset>
 
             <div class="buttonSpacing">
               <div class="form-group">
@@ -193,7 +181,7 @@
 
               </div>
             </div>
-          </fieldset>
+          </fieldset> -->
 
 
         </form>
@@ -203,7 +191,7 @@
           <section id="expandableHelp" aria-labelledby="expand-help__heading-expandableHelp" class="expand-help   "
             data-initial-value="">
             <h2 class="expand-help__heading" id="expand-help__heading-expandableHelp"><button type="button" name="expand-help-button"
-                class="expand-help__button" aria-expanded="false" aria-controls="help-content-expandableHelp">Problems checking in?</button></h2>
+                class="expand-help__button" aria-expanded="false" aria-controls="help-content-expandableHelp">Any concerns</button></h2>
             <div class="expand-help__content js-hidden" id="help-content-expandableHelp" aria-hidden="true">
               <div class="important-information">
                 <p>If you can't find your postcode on a letter or other document, try entering your address into a
