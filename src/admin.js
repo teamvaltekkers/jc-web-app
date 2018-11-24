@@ -1,4 +1,3 @@
-
 import firebase from "firebase";
 
 const config = {
@@ -17,11 +16,12 @@ const database = firebase.database();
 document.addEventListener("DOMContentLoaded", function() {
   var waitingUl = document.getElementById('waiting');
   var checkInRef = database.ref('checkins/');
-
+  
   checkInRef.on('value', (snapshot) =>{
     var checkins = snapshot.val();
     Object.values(checkins).forEach((checkin) => {
-      $('#' + checkin.status).insert(`<li class="app-task-list__item" id="${checkin.id}"><a class="app-task-list__task-name" href="">${checkin.name} - ${(new Date(checkin.time)).toString().split(' ')[4].substr(0, 5)}</a><strong class="${checkin.status_spec} govuk-tag app-task-list__task-completed" id="contact-details-completed">${checkin.status_spec}</strong></li>`);
+      // $('#' + checkin.status).insert(`<li class="app-task-list__item" id="${checkin.id}"><a class="app-task-list__task-name" href="">${checkin.name} - ${(new Date(checkin.time)).toString().split(' ')[4].substr(0, 5)}</a><strong class="${checkin.status_spec} govuk-tag app-task-list__task-completed" id="contact-details-completed">${checkin.status_spec}</strong></li>`);
+      document.getElementById('#' + checkin.status).innerHTML += `<li class="app-task-list__item" id="${checkin.id}"><a class="app-task-list__task-name" href="">${checkin.name} - ${(new Date(checkin.time)).toString().split(' ')[4].substr(0, 5)}</a><strong class="${checkin.status_spec} govuk-tag app-task-list__task-completed" id="contact-details-completed">${checkin.status_spec}</strong></li>`;
     })
   });
 
@@ -31,8 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
 const registerResetFireBase = () => {
   var resetButton = document.getElementById('resetList');
   resetButton.addEventListener('click', () =>{
-    
+
     database.ref('checkins/785376436542').set({
+      id: '785376436542',
       time: new Date().getTime() + (9 * 60 * 1000),
       name: 'Jane',
       status: 'due',
@@ -40,6 +41,7 @@ const registerResetFireBase = () => {
     });
 
     database.ref('checkins/8652524654254').set({
+      id: '8652524654254',
       time: new Date().getTime() - (1 * 60 * 1000),
       name: 'Jack',
       status: 'due',
@@ -47,6 +49,7 @@ const registerResetFireBase = () => {
     });
 
     database.ref('checkins/54264325432').set({
+      id: '54264325432',
       time: new Date().getTime() - (5 * 63 * 69 * 1000),
       name: 'Paul',
       status: 'complete',
@@ -54,6 +57,7 @@ const registerResetFireBase = () => {
     });
 
     database.ref('checkins/547869864563').set({
+      id: '547869864563',
       time: new Date().getTime() - (3 * 60 * 60 * 1000),
       name: 'Phil',
       status: 'complete',
