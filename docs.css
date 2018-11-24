@@ -3278,7 +3278,7 @@
 .due {
   background-color: rgb(180, 122, 13);
 }
-.late {
+.late, .missed {
   background-color: rgb(231, 55, 55);
 }
 .completed {

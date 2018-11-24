@@ -20,12 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   checkInRef.on('value', (snapshot) =>{
     var checkins = snapshot.val();
-    var newList = '';
-    Object.values(checkins).map((checkin)=>{
-      const checkinDateTime = new Date(checkin.time);
-      newList += `<li class="app-task-list__item" id="Jane"><a class="app-task-list__task-name" href="">${checkin.name} - ${checkinDateTime.getHours()}:${checkinDateTime.getMinutes()}</a><strong class="waiting govuk-tag app-task-list__task-completed" id="contact-details-completed">waiting</strong></li>`
+    Object.values(checkins).forEach((checkin) => {
+      $('#' + checkin.status).insert(`<li class="app-task-list__item" id="${checkin.id}"><a class="app-task-list__task-name" href="">${checkin.name} - ${(new Date(checkin.time)).toString().split(' ')[4].substr(0, 5)}</a><strong class="${checkin.status_spec} govuk-tag app-task-list__task-completed" id="contact-details-completed">${checkin.status_spec}</strong></li>`);
     })
-    waitingUl.innerHTML = newList;
   });
 
   registerResetFireBase();
