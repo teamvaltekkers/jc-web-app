@@ -16,8 +16,11 @@ const database = firebase.database();
 document.addEventListener("DOMContentLoaded", function() {
   var waitingUl = document.getElementById('waiting');
   var checkInRef = database.ref('checkins/');
-  
+
   checkInRef.on('value', (snapshot) =>{
+    document.getElementById('due').innerHTML = '';
+    document.getElementById('complete').innerHTML = '';
+    document.getElementById('waiting').innerHTML = '';
     var checkins = snapshot.val();
     Object.values(checkins).forEach((checkin) => {
       // $('#' + checkin.status).insert(`<li class="app-task-list__item" id="${checkin.id}"><a class="app-task-list__task-name" href="">${checkin.name} - ${(new Date(checkin.time)).toString().split(' ')[4].substr(0, 5)}</a><strong class="${checkin.status_spec} govuk-tag app-task-list__task-completed" id="contact-details-completed">${checkin.status_spec}</strong></li>`);
