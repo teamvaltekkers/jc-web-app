@@ -14,14 +14,17 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-const checkinUser = (name, time) =>
-  database.ref('checkins/' + name+ ' checkin').set({
+const checkinUser = (id, name, time, status, status_spec) =>
+  database.ref('checkins/' + id + ' checkin').set({
+    id: id,
     time: time,
     name: name,
+    status: status,
+    status_spec: status_spec
   });
 
 document.addEventListener("DOMContentLoaded", function() {
   var button = document.getElementById('id-submit-button');
-  button.addEventListener('click', () => checkinUser('Jane',new Date().getTime()));
+  button.addEventListener('click', () => checkinUser(new Date().valueOf(), 'Jane', new Date().getTime(), 'waiting', 'waiting'));
 });
 
