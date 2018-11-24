@@ -60,7 +60,7 @@ const registerResetFireBase = () => {
       id: '547869864563',
       time: new Date().getTime() - (3 * 60 * 60 * 1000),
       name: 'Phil',
-      status: 'complete',
+      status: 'due',
       status_spec:'missed'
     });
   })
