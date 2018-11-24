@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var checkins = snapshot.val();
     Object.values(checkins).forEach((checkin) => {
       // $('#' + checkin.status).insert(`<li class="app-task-list__item" id="${checkin.id}"><a class="app-task-list__task-name" href="">${checkin.name} - ${(new Date(checkin.time)).toString().split(' ')[4].substr(0, 5)}</a><strong class="${checkin.status_spec} govuk-tag app-task-list__task-completed" id="contact-details-completed">${checkin.status_spec}</strong></li>`);
-      document.getElementById('#' + checkin.status).innerHTML += `<li class="app-task-list__item" id="${checkin.id}"><a class="app-task-list__task-name" href="">${checkin.name} - ${(new Date(checkin.time)).toString().split(' ')[4].substr(0, 5)}</a><strong class="${checkin.status_spec} govuk-tag app-task-list__task-completed" id="contact-details-completed">${checkin.status_spec}</strong></li>`;
+      document.getElementById(checkin.status).innerHTML += `<li class="app-task-list__item" id="${checkin.id}"><a class="app-task-list__task-name" href="">${checkin.name} - ${(new Date(checkin.time)).toString().split(' ')[4].substr(0, 5)}</a><strong class="${checkin.status_spec} govuk-tag app-task-list__task-completed" id="contact-details-completed">${checkin.status_spec}</strong></li>`;
     })
   });
 
@@ -45,7 +45,7 @@ const registerResetFireBase = () => {
       time: new Date().getTime() - (1 * 60 * 1000),
       name: 'Jack',
       status: 'due',
-      status_spec:'late'
+      status_spec: 'late'
     });
 
     database.ref('checkins/54264325432').set({
@@ -53,7 +53,7 @@ const registerResetFireBase = () => {
       time: new Date().getTime() - (5 * 63 * 69 * 1000),
       name: 'Paul',
       status: 'complete',
-      status_spec:'complete'
+      status_spec:'completed'
     });
 
     database.ref('checkins/547869864563').set({
